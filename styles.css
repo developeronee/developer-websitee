@@ -1,0 +1,72 @@
+/* Estilo general para el cuerpo de la página */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.pexels.com/photos/248515/pexels-photo-248515.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* URL de la imagen de fondo */
+    background-size: cover; /* Asegura que la imagen cubra todo el fondo */
+    background-position: center; /* Centra la imagen */
+    background-attachment: fixed; /* Mantiene la imagen fija mientras se desplaza el contenido */
+    color: #fff; /* Texto en blanco para contrastar con el fondo */
+}
+
+/* Estilos para el encabezado */
+header {
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para el encabezado */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Estilos para las secciones */
+section {
+    background: rgba(0, 0, 0, 0.5); /* Fondo semitransparente para secciones */
+    margin: 20px;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Estilo para los formularios */
+.contact-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+    margin: 10px 0;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    font-size: 16px;
+}
+
+.contact-form button {
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para las imágenes del portafolio */
+.portfolio img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* Estilos para los encabezados */
+h1, h2 {
+    margin: 0;
+    padding: 0;
+}

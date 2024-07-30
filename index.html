@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollador de Sistemas y Páginas Web</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Función para mostrar la alerta de bienvenida
+        function showWelcomeMessage() {
+            alert('BIENVENIDOS A DEVELOPER FOREVER');
+        }
+
+        // Función para limpiar el formulario después del envío
+        function clearForm() {
+            document.getElementById('contactForm').reset();
+        }
+
+        // Función para manejar el envío del formulario
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Evita el envío real del formulario
+            // Enviar el formulario de manera asíncrona usando fetch
+            fetch(event.target.action, {
+                method: 'POST',
+                body: new FormData(event.target),
+            }).then(response => {
+                if (response.ok) {
+                    alert('Gracias por contactarnos. Nos pondremos en contacto contigo pronto.');
+                    clearForm(); // Limpia el formulario después de enviar
+                } else {
+                    alert('Hubo un problema con el envío. Por favor, intenta de nuevo.');
+                }
+            }).catch(error => {
+                alert('Hubo un problema con el envío. Por favor, intenta de nuevo.');
+            });
+        }
+
+        // Ejecutar la función cuando la página se cargue
+        window.onload = showWelcomeMessage;
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Bienvenidos a Developer Forever</h1>
+        <p class="tagline">Innovación y Excelencia en Desarrollo de Sistemas y Páginas Web</p>
+    </header>
+    <section>
+        <h2>Sobre mí</h2>
+        <p>Hola, soy Alex Saez, un apasionado desarrollador de sistemas y páginas web con 23 años de experiencia. Me gradué en Idat, donde adquirí una sólida formación en tecnologías de la información y desarrollo web. Con un enfoque en la innovación y la excelencia, me especializo en crear soluciones personalizadas que cumplen con las expectativas más altas de mis clientes. Mi objetivo es transformar ideas en realidades digitales funcionales y atractivas.</p>
+        <p>Mi experiencia incluye:</p>
+        <ul>
+            <li>Desarrollo de aplicaciones web y móviles.</li>
+            <li>Diseño de interfaces de usuario intuitivas y atractivas.</li>
+            <li>Optimización de rendimiento y seguridad en sitios web.</li>
+            <li>Implementación de soluciones a medida para diversas industrias.</li>
+        </ul>
+    </section>
+    <section>
+        <h2>Servicios</h2>
+        <ul>
+            <li>Desarrollo de Sistemas Personalizados</li>
+            <li>Diseño y Desarrollo de Páginas Web</li>
+            <li>Optimización de Páginas Web</li>
+            <li>Mantenimiento y Soporte Técnico</li>
+        </ul>
+    </section>
+    <section class="portfolio">
+        <h2>Portafolio</h2>
+        <img src="https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg" alt="Diseño Web 1">
+        <p><strong>Creación de Plataforma E-Commerce:</strong> Esta imagen ilustra un proyecto completo desarrollado para una tienda en línea, con un diseño moderno y funcional que optimiza la experiencia de compra del usuario. Incluye características como una interfaz intuitiva, carrito de compras y opciones de pago seguras, todo diseñado para maximizar la satisfacción del cliente y las ventas.</p>
+        
+        <img src="https://images.pexels.com/photos/10845119/pexels-photo-10845119.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Diseño Web 2">
+        <p><strong>Revitalización de Sitio Web para ONG:</strong> La imagen representa el rediseño de un sitio web para una organización sin fines de lucro, enfocándose en mejorar la accesibilidad y la presentación de información crítica. El nuevo diseño incluye una sección de blog, una galería de imágenes y un sistema de donaciones en línea, todo pensado para fortalecer el compromiso de los usuarios con la causa.</p>
+        
+        <!-- Añade más imágenes y descripciones según sea necesario -->
+    </section>
+    <section>
+        <h2>Contacto</h2>
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/meojgoka" method="POST" onsubmit="handleFormSubmit(event)">
+            <input type="text" name="name" placeholder="Tu Nombre" required>
+            <input type="email" name="email" placeholder="Tu Email" required>
+            <textarea name="message" rows="5" placeholder="Tu Mensaje" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+</body>
+</html>
